@@ -18,4 +18,9 @@ spec:
       annotations:
         kubernetes.io/ingress.class: alb
         alb.ingress.kubernetes.io/scheme: internet-facing
+        alb.ingress.kubernetes.io/healthcheck-interval-seconds: '5'
+        alb.ingress.kubernetes.io/healthcheck-timeout-seconds: '2'
+        alb.ingress.kubernetes.io/healthy-threshold-count: '2'
+        alb.ingress.kubernetes.io/unhealthy-threshold-count: '2'
+        alb.ingress.kubernetes.io/healthcheck-path: /healthz
       path: /*
